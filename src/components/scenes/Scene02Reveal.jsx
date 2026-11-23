@@ -512,7 +512,7 @@ export default function Scene02Reveal({ onNext, onPrev, onDecline, eventData }) 
                 <Sticker variant="chrome" size="sm">ED. 3 DETIK</Sticker>
               </div>
 
-              <Barcode code="DHANI-VIP-BASH" spec="CONFIDENTIAL PACKAGING GRAPHIC" />
+              <Barcode code="2011-DHANI-BDAY" spec="SPECIAL EVENT 2026" />
             </div>
           )}
 

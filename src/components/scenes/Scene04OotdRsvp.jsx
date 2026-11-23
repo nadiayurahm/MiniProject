@@ -396,27 +396,6 @@ export default function Scene04OotdRsvp({ onPrev, eventData }) {
           </div>
         </div>
       </div>
-
-      {/* Navigation Controls */}
-      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <button
-          type="button"
-          onClick={onPrev}
-          className="btn-street btn-street-ghost"
-          style={{ fontSize: '0.95rem', padding: '10px 20px' }}
-        >
-          ← KEMBALI KE DETAIL ACARA
-        </button>
-
-        <button
-          type="button"
-          onClick={handleWhatsappRsvp}
-          className="btn-street btn-street-primary"
-          style={{ fontSize: '1.1rem', padding: '12px 28px' }}
-        >
-          KONFIRM sekayang →
-        </button>
-      </div>
       {/* Popup Modal Ketika Klik BELUM PASTI */}
       {showMaybePopup && (
         <div

@@ -115,9 +115,7 @@ export default function App() {
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
           <span>© 2026 {EVENT_DATA.eventName}</span>
           <span>•</span>
-          <span>DOMINANT NAVY BLUE & SLIGHT PURPLE // Y2K STREET GRAPHIC</span>
-          <span>•</span>
-          <span>SPECIAL PACKAGING EDITION</span>
+          <span>cepecial dari cantikna mamas</span>
         </div>
       </footer>
     </div>
