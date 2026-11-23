@@ -1,0 +1,279 @@
+@import './variables.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-navy-dark);
+  color: var(--color-off-white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(ellipse at 50% 10%, rgba(27, 47, 99, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(76, 40, 137, 0.25) 0%, transparent 50%);
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Technical Streetwear Background Grid with Crosshairs */
+.bg-street-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(139, 92, 246, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 58, 109, 0.2) 1px, transparent 1px);
+}
+
+.bg-halftone-dots {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.05;
+  background-image: radial-gradient(var(--color-metallic-silver) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Tactical Corner Crosshairs */
+.corner-crosshair {
+  position: relative;
+}
+.corner-crosshair::before,
+.corner-crosshair::after {
+  content: '+';
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-accent-purple);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 10;
+}
+.corner-crosshair::before { top: 6px; left: 8px; }
+.corner-crosshair::after { bottom: 6px; right: 8px; }
+
+/* Real Streetwear / Packaging Foil Pouch Texture */
+.foil-pouch {
+  position: relative;
+  background: var(--gradient-navy-slab);
+  border: 2px solid var(--color-metallic-silver);
+  box-shadow: 
+    0 20px 50px rgba(3, 7, 18, 0.8),
+    0 0 25px rgba(139, 92, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Foil Heat-Sealed Crimp Pattern at Top & Bottom */
+.foil-crimp {
+  height: 14px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #1b2d56,
+    #1b2d56 4px,
+    #0c1630 4px,
+    #0c1630 8px
+  );
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+/* Interactive Zipper / Tear Strip */
+.tear-strip {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffe600,
+    #ffe600 12px,
+    #070d1e 12px,
+    #070d1e 24px
+  );
+  padding: 6px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  position: relative;
+  cursor: pointer;
+  border-top: 1.5px dashed rgba(255, 255, 255, 0.6);
+  border-bottom: 1.5px dashed rgba(255, 255, 255, 0.6);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.tear-strip:hover {
+  filter: brightness(1.12);
+  transform: scaleY(1.04);
+}
+
+/* Holographic Sheen */
+.holo-sheen {
+  background: var(--gradient-holographic);
+  background-size: 200% 200%;
+  animation: holo-shift 6s ease infinite alternate;
+}
+
+@keyframes holo-shift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Perforated Divider Line */
+.perforated-divider {
+  border: none;
+  border-top: 2px dashed rgba(212, 216, 229, 0.35);
+  margin: 16px 0;
+  position: relative;
+}
+
+/* Buttons — Authentic Street Graphic Hardware Style */
+.btn-street {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+  border: none;
+}
+
+.btn-street:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0px var(--color-navy-deep) !important;
+}
+
+.btn-street-chrome {
+  background: var(--gradient-chrome);
+  color: var(--color-navy-dark);
+  font-weight: 900;
+  border: 2px solid var(--color-navy-deep);
+  box-shadow: var(--shadow-street-lg);
+}
+
+.btn-street-chrome:hover {
+  filter: brightness(1.08);
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px var(--color-navy-deep);
+}
+
+.btn-street-primary {
+  background: linear-gradient(135deg, #182b54 0%, #0d1732 100%);
+  color: var(--color-off-white);
+  border: 2px solid var(--color-accent-purple);
+  box-shadow: var(--shadow-street-lg), 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn-street-primary:hover {
+  background: linear-gradient(135deg, #223a6d 0%, #112042 100%);
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px var(--color-navy-deep), 0 0 22px rgba(139, 92, 246, 0.5);
+}
+
+.btn-street-yellow {
+  background-color: var(--color-street-yellow);
+  color: var(--color-navy-dark);
+  border: 2px solid var(--color-navy-deep);
+  box-shadow: var(--shadow-street);
+  font-weight: 900;
+}
+
+.btn-street-yellow:hover {
+  filter: brightness(1.06);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-street-lg);
+}
+
+.btn-street-ghost {
+  background-color: transparent;
+  color: var(--color-metallic-silver);
+  border: 1.5px solid rgba(212, 216, 229, 0.35);
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.btn-street-ghost:hover {
+  background-color: rgba(212, 216, 229, 0.08);
+  border-color: var(--color-metallic-silver);
+  color: var(--color-off-white);
+  transform: translate(-1px, -1px);
+}
+
+/* Card Styles */
+.card-street {
+  background: var(--gradient-navy-slab);
+  border: 2px solid var(--color-navy-border);
+  box-shadow: var(--shadow-street-lg);
+  border-radius: 8px;
+  position: relative;
+}
+
+.card-street-light {
+  background-color: var(--color-off-white);
+  color: var(--color-navy-dark);
+  border: 2px solid var(--color-navy-deep);
+  box-shadow: var(--shadow-street);
+  border-radius: 6px;
+}
+
+/* Floating animation */
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-6px) rotate(calc(var(--rot, 0deg) + 1.5deg)); }
+}
+
+.floating-elem {
+  animation: subtle-float 4.5s ease-in-out infinite;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .floating-elem {
+    animation: none !important;
+  }
+}
